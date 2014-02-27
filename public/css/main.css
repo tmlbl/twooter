@@ -5,6 +5,10 @@ body {
 
 #header {
   text-align: center;
+  background-color: #A9C4A3;
+  padding: 2%;
+  border: 2px solid black;
+  margin: 3%;
 }
 
 .tweet {

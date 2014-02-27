@@ -22,3 +22,9 @@ io.on('twoots', function (twoots) {
     $('#twoots').append(maker(twats[tw]));
   }
 });
+
+$("#handle").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submit").click();
+    }
+});
