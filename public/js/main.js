@@ -23,7 +23,7 @@ io.on('twoots', function (twoots) {
   twats = jumble(twoots);
   console.log(twats);
   twats = _.map(twats, function (tweet) {
-    return { text: tweet, date: 'Just Now' };
+    return { text: tweet, date: new Date() };
   });
   for (var tw in twats) {
     $('#twoots').append(maker(twats[tw]));
@@ -38,7 +38,7 @@ $("#handle").keyup(function(event){
 
 function jumble (tweets) {
   var words = [],
-    newTweets = [];    
+    newTweets = [];  
   _.map(tweets, function (tweet) {
     words = _.union(words, (tweet.text).split(' '));
   });
