@@ -34,9 +34,11 @@ body {
   border: none;
   font-size: 2rem;
   font-family: 'Courier New', courier, monospace;
+  padding: 1%;
 }
 
 #submit {
   font-family: 'Courier New', courier, monospace;
   font-size: 2rem;
+  padding: 1%;
 }
