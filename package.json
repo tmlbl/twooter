@@ -18,7 +18,9 @@
   "dependencies": {
     "jade": "~1.1.5",
     "express": "~3.4.8",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "twit": "~1.1.12",
+    "express.io": "~1.1.13"
   },
   "devDependencies": {
     "grunt-contrib-sass": "~0.7.2",

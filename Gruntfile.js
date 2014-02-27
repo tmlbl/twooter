@@ -16,49 +16,49 @@ module.exports = function (grunt) {
         }
       },
       styles: {
-        files: ['app/styles/**'],
+        files: ['public/css/**'],
         tasks: ['sass', 'concat:css', 'cssmin'],
         options: {
           livereload: true
         }
       }
-    },
-    sass: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'app/styles',
-          src: ['*.scss'],
-          dest: 'app/styles/compiled',
-          ext: '.css'
-        }]
-      }
-    },
-    concat: {
-      js: {
-        src: ['app/scripts/*.js'],
-        dest: 'public/js/main.js'
-      },
-      css: {
-        src: ['app/styles/compiled/*.css'],
-        dest: 'public/css/main.css'
-      }
-    },
-    uglify: {
-      js: {
-        src: ['public/js/main.js'],
-        dest: 'public/dist/main.min.js'
-      }
-    },
-    cssmin: {
-      minify: {
-        expand: true,
-        cwd: 'public/css/',
-        src: ['*.css', '!*.min.css'],
-        dest: 'public/dist',
-        ext: '.min.css'
-      }
     }
+    // sass: {
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: 'app/styles',
+    //       src: ['*.scss'],
+    //       dest: 'app/styles/compiled',
+    //       ext: '.css'
+    //     }]
+    //   }
+    // },
+    // concat: {
+    //   js: {
+    //     src: ['app/scripts/*.js'],
+    //     dest: 'public/js/main.js'
+    //   },
+    //   css: {
+    //     src: ['app/styles/compiled/*.css'],
+    //     dest: 'public/css/main.css'
+    //   }
+    // },
+    // uglify: {
+    //   js: {
+    //     src: ['public/js/main.js'],
+    //     dest: 'public/dist/main.min.js'
+    //   }
+    // },
+    // cssmin: {
+    //   minify: {
+    //     expand: true,
+    //     cwd: 'public/css/',
+    //     src: ['*.css', '!*.min.css'],
+    //     dest: 'public/dist',
+    //     ext: '.min.css'
+    //   }
+    // }
   });
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');

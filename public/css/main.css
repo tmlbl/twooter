@@ -1,2 +1,37 @@
 body {
-  color: red; }
+  background-color: #5CA14F;
+  font-family: 'Courier New', courier, monospace;
+}
+
+#header {
+  text-align: center;
+}
+
+.tweet {
+  border: 2px solid black;
+  background-color: #A9C4A3;
+  margin: 3%;
+}
+
+.twtext {
+  padding: 3%;
+}
+
+.twdate {
+  padding: 3%;
+}
+
+#inputs {
+  text-align: center;
+}
+
+#handle {
+  border: none;
+  font-size: 2rem;
+  font-family: 'Courier New', courier, monospace;
+}
+
+#submit {
+  font-family: 'Courier New', courier, monospace;
+  font-size: 2rem;
+}
