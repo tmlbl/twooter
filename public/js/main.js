@@ -16,7 +16,7 @@ $('#submit').click(function () {
 });
 
 io.on('twoots', function (twoots) {
-  console.log(twoots);
+  $('#twoots').html(' ');
   twats = twoots;
   for (var tw in twats) {
     $('#twoots').append(maker(twats[tw]));
