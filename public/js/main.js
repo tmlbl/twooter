@@ -38,11 +38,11 @@ $("#handle").keyup(function(event){
 
 function jumble (tweets) {
   var words = [],
-    newTweets = [];  
+    newTweets = [];
   _.map(tweets, function (tweet) {
     words = _.union(words, (tweet.text).split(' '));
   });
-  nextWord = 5;
+  nextWord = 7;
   for (var i = 0; i <= 20; i++) {
     var newTweet = '';
     var tweetLen = Math.floor(Math.random()*140);
