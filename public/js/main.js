@@ -14,6 +14,9 @@ $('#submit').click(function () {
   var hand = $('#handle').val();
   if (!hand) {
     alert('Please enter a twitter handle.');
+    return null;
+  } else if (hand[0] == '@') {
+    hand = hand.substring(1);
   }
   io.emit('handle', { handle: hand });
 });
@@ -21,7 +24,6 @@ $('#submit').click(function () {
 io.on('twoots', function (twoots) {
   $('#twoots').html(' ');
   twats = jumble(twoots);
-  console.log(twats);
   twats = _.map(twats, function (tweet) {
     return { text: tweet, date: new Date() };
   });
@@ -40,7 +42,7 @@ function jumble (tweets) {
   var words = [],
     newTweets = [];
   _.map(tweets, function (tweet) {
-    words = _.union(words, (tweet.text).split(' '));
+    words = words.concat(tweet.text.split(' '));
   });
   nextWord = 7;
   for (var i = 0; i <= 20; i++) {
@@ -48,10 +50,14 @@ function jumble (tweets) {
     var tweetLen = Math.floor(Math.random()*140);
     while (newTweet.length < tweetLen) {
       var index = Math.floor(Math.random()*words.length);
-      newTweet += words[index] + ' ';
+      if (words[index].substring(0,4) != 'http') {
+        newTweet += words[index] + ' ';
+      }
       while (words[index].length < 5) {
         index++;
-        newTweet += words[index] + ' ';
+        if (words[index].substring(0,4) != 'http') {
+          newTweet += words[index] + ' ';
+        }
       }
     }
     newTweets.push(newTweet);
